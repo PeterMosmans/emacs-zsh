@@ -11,7 +11,7 @@
 
 
 if "$ZSH/tools/require_tool.sh" emacsclient 24 2>/dev/null ; then
-    export EMACS_PLUGIN_LAUNCHER="$ZSH/plugins/emacs/emacsclient.sh"
+    export EMACS_PLUGIN_LAUNCHER="$(dirname "$(readlink -f "$0")")/emacsclient.sh"
 
     # set EDITOR if not already defined.
     export EDITOR="${EDITOR:-${EMACS_PLUGIN_LAUNCHER}}"
